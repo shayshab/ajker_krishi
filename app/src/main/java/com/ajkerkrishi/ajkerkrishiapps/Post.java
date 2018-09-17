@@ -1,9 +1,11 @@
 package com.ajkerkrishi.ajkerkrishiapps;
 
 import android.app.ProgressDialog;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,10 +23,13 @@ public class Post extends AppCompatActivity {
 
     TextView title;
     WebView content;
+    ImageView img;
+
     ProgressDialog progressDialog;
     Gson gson;
     Map<String, Object> mapPost;
     Map<String, Object> mapTitle;
+    Map<String, Object> mapImage;
     Map<String, Object> mapContent;
 
     @Override
@@ -36,13 +41,14 @@ public class Post extends AppCompatActivity {
 
         title = findViewById(R.id.title);
         content = findViewById(R.id.content);
+        img = findViewById(R.id.imag);
 
         progressDialog = new ProgressDialog(Post.this);
         progressDialog.setMessage("Loading...");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
 
-        String url = "http://www.ajkerkrishi.com/wp-json/wp/v2/posts/" + id + "?fields=title,content";
+        String url = "http://www.ajkerkrishi.com/wp-json/wp/v2/posts/" + id + "?fields=title,content,better_featured_image";
 
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
@@ -50,9 +56,12 @@ public class Post extends AppCompatActivity {
                 gson = new Gson();
                 mapPost = (Map<String, Object>) gson.fromJson(s, Map.class);
                 mapTitle = (Map<String, Object>) mapPost.get("title");
+                mapImage = (Map<String, Object>) mapPost.get("better_featured_image");
                 mapContent = (Map<String, Object>) mapPost.get("content");
 
                 title.setText(mapTitle.get("rendered").toString());
+
+                img.setImageURI(Uri.parse(mapImage.get("source_url").toString()));
                 content.loadData(mapContent.get("rendered").toString(), "text/html", "UTF-8");
 
                 progressDialog.dismiss();

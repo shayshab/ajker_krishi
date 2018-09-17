@@ -11,21 +11,19 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
-public class Poramorsho extends AppCompatActivity {
-
+public class KrishiPonno extends AppCompatActivity {
     WebView webView;
     ProgressBar prg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_poramorsho);
-        setTitle("সদস্য হউন");
-
+        setContentView(R.layout.activity_krishi_ponno);
+        setTitle("কৃষি পণ্য");
 
         getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
 
-        webView = findViewById(R.id.webV);
+        webView = findViewById(R.id.webView);
         prg = findViewById(R.id.progressb);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -35,7 +33,7 @@ public class Poramorsho extends AppCompatActivity {
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 super.onPageStarted(view, url, favicon);
                 prg.setVisibility(View.VISIBLE);
-                setTitle("Membership");
+                setTitle("Krishi Store");
             }
 
             @Override
@@ -45,7 +43,7 @@ public class Poramorsho extends AppCompatActivity {
 
             }
         });
-        webView.loadUrl("https://docs.google.com/forms/d/1Jhdummbsg9wBQxcWZvgQBLBlLBa8fNLWkzXEQ51p34c");
+        webView.loadUrl("http://krishistorebd.com/");
 
 
         webView.setOnKeyListener(new View.OnKeyListener() {
@@ -71,5 +69,3 @@ public class Poramorsho extends AppCompatActivity {
 
 
 }
-
-

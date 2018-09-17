@@ -12,12 +12,12 @@ public class Contact extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact);
+        setTitle("যোগাযোগ");
 
         // this.contact = (WebView) findViewById(R.id.c);
 
 
-        setTitle("যোগাযোগ");
-        this.contact.loadUrl("file:///android_asset/ajkerkrishi.html");
+
 
     }
 }

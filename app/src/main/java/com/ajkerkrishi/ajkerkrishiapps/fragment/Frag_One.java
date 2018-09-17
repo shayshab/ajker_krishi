@@ -8,10 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.ajkerkrishi.ajkerkrishiapps.CustomListAdapter;
 import com.ajkerkrishi.ajkerkrishiapps.Post;
 import com.ajkerkrishi.ajkerkrishiapps.R;
 import com.android.volley.Request;
@@ -27,7 +27,7 @@ import java.util.Map;
 
 public class Frag_One extends Fragment {
     public ProgressDialog progressDialog;
-    String url = "http://www.ajkerkrishi.com//wp-json/wp/v2/posts?filter[posts_per_page]=10&fields=id,title";
+    String url = "http://www.ajkerkrishi.com/wp-json/wp/v2/posts?per_page=10&categories=69&fields=id,title";
     List<Object> list;
     Gson gson;
     ListView postList;
@@ -35,6 +35,12 @@ public class Frag_One extends Fragment {
     Map<String, Object> mapTitle;
     int postID;
     String postTitle[];
+
+    Integer[] imgid = {
+            R.drawable.fish,
+
+
+    };
 
 
     public Frag_One() {
@@ -59,7 +65,7 @@ public class Frag_One extends Fragment {
 
         postList = v.findViewById(R.id.postList);
         progressDialog = new ProgressDialog(getActivity());
-        progressDialog.setMessage("Loading...");
+        progressDialog.setMessage("অপেক্ষা করুন লোড হচ্ছে...");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
 
@@ -77,7 +83,10 @@ public class Frag_One extends Fragment {
                     postTitle[i] = (String) mapTitle.get("rendered");
                 }
 
-                postList.setAdapter(new ArrayAdapter(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, postTitle));
+                CustomListAdapter adapter = new CustomListAdapter(getActivity(), postTitle, imgid);
+                postList.setAdapter(adapter);
+
+                //postList.setAdapter(new ArrayAdapter(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, postTitle));
                 progressDialog.dismiss();
             }
         }, new Response.ErrorListener() {

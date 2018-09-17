@@ -10,11 +10,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
-import com.ajkerkrishi.ajkerkrishiapps.AjkerKrishi;
+import com.ajkerkrishi.ajkerkrishiapps.ChadKrishi;
+import com.ajkerkrishi.ajkerkrishiapps.Chasabad;
+import com.ajkerkrishi.ajkerkrishiapps.Contact;
+import com.ajkerkrishi.ajkerkrishiapps.KrishiOdekta;
+import com.ajkerkrishi.ajkerkrishiapps.KrishiPonno;
+import com.ajkerkrishi.ajkerkrishiapps.Krishitotho;
+import com.ajkerkrishi.ajkerkrishiapps.MotsoSompod;
+import com.ajkerkrishi.ajkerkrishiapps.PokaMakor;
 import com.ajkerkrishi.ajkerkrishiapps.Poramorsho;
+import com.ajkerkrishi.ajkerkrishiapps.PraniSompod;
 import com.ajkerkrishi.ajkerkrishiapps.R;
+import com.ajkerkrishi.ajkerkrishiapps.Video;
 
 public class Frag_Two extends Fragment {
 
@@ -60,7 +68,7 @@ public class Frag_Two extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), AjkerKrishi.class);
+                Intent intent = new Intent(getActivity(), Krishitotho.class);
                 startActivity(intent);
             }
         });
@@ -68,16 +76,16 @@ public class Frag_Two extends Fragment {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "Coming soon",
-                        Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), Chasabad.class);
+                startActivity(intent);
             }
         });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "Coming soon",
-                        Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), ChadKrishi.class);
+                startActivity(intent);
             }
         });
 
@@ -85,45 +93,53 @@ public class Frag_Two extends Fragment {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "Coming soon",
-                        Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), PraniSompod.class);
+                startActivity(intent);
             }
         });
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "Coming soon",
-                        Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), MotsoSompod.class);
+                startActivity(intent);
             }
         });
 
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "coming soon",
-                        Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), PokaMakor.class);
+                startActivity(intent);
             }
         });
 
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "Coming soon",
-                        Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), Video.class);
+                startActivity(intent);
+
             }
         });
 
         btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "coming soon",
-                        Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), KrishiOdekta.class);
+                startActivity(intent);
             }
         });
         btn8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity());
+                Intent intent = new Intent(getActivity(), Poramorsho.class);
+                startActivity(intent);
+            }
+        });
+        btn9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity(), R.style.AlertDialogStyle);
                 builder1.setMessage("you have to member first");
                 builder1.setCancelable(true);
 
@@ -147,25 +163,18 @@ public class Frag_Two extends Fragment {
                 alert11.show();
             }
         });
-        btn9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getActivity(), "coming soon",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
         btn10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), Poramorsho.class);
+                Intent intent = new Intent(getActivity(), Contact.class);
                 startActivity(intent);
             }
         });
         btn11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "coming soon",
-                        Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), KrishiPonno.class);
+                startActivity(intent);
             }
         });
 

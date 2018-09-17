@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "251098272095",
+    "firebase_url": "https://ajker-krishi.firebaseio.com",
+    "project_id": "ajker-krishi",
+    "storage_bucket": "ajker-krishi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251098272095:android:bd162f609dd2cf8d",
+        "android_client_info": {
+          "package_name": "com.ajkerkrishi.ajkerkrishiapps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251098272095-u6cl61ndmkacrd5t34topd31g1o23de5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATwgpKaRlitJVHkPmQrZtOf_xY-dytMF4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -20,18 +20,8 @@ import com.google.gson.Gson;
 import java.util.List;
 import java.util.Map;
 
-public class Krishitotho extends AppCompatActivity {
+public class Chasabad extends AppCompatActivity {
 
-    /* String[] itemname ={
-             "Khan",
-             "Mohammad",
-             "Shayshab",
-             "Azad",
-             "kanan",
-             "john",
-             "cool",
-             "pool"
-     };*/
     Integer[] imgid = {
             R.drawable.fish,
 
@@ -39,7 +29,7 @@ public class Krishitotho extends AppCompatActivity {
     };
 
 
-    String url = "http://www.ajkerkrishi.com/wp-json/wp/v2/posts?per_page=25&categories=47&fields=id,title";
+    String url = "http://www.ajkerkrishi.com/wp-json/wp/v2/posts?per_page=10&categories=2&fields=id,title";
     List<Object> list;
     Gson gson;
     ProgressDialog progressDialog;
@@ -50,21 +40,17 @@ public class Krishitotho extends AppCompatActivity {
     String postTitle[];
 
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_krishitotho);
-        setTitle("কৃষি তথ্য");
+        setContentView(R.layout.activity_chasabad);
+        setTitle("চাষাবাদ পদ্ধতি");
 
         // CustomListAdapter adapter=new CustomListAdapter(this, itemname, imgid);
 
         final ListView postList = findViewById(R.id.list);
         //postList.setAdapter(adapter);
-        progressDialog = new ProgressDialog(Krishitotho.this);
+        progressDialog = new ProgressDialog(Chasabad.this);
         progressDialog.setMessage("অপেক্ষা করুন লোড হচ্ছে...");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
@@ -83,7 +69,7 @@ public class Krishitotho extends AppCompatActivity {
                     postTitle[i] = (String) mapTitle.get("rendered");
                 }
 
-                CustomListAdapter adapter = new CustomListAdapter(Krishitotho.this, postTitle, imgid);
+                CustomListAdapter adapter = new CustomListAdapter(Chasabad.this, postTitle, imgid);
                 postList.setAdapter(adapter);
 
                 //postList.setAdapter(new ArrayAdapter(Krishitotho.this,android.R.layout.simple_list_item_1,postTitle));
@@ -92,11 +78,11 @@ public class Krishitotho extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
-                Toast.makeText(Krishitotho.this, "Some error occurred", Toast.LENGTH_LONG).show();
+                Toast.makeText(Chasabad.this, "Some error occurred", Toast.LENGTH_LONG).show();
             }
         });
 
-        RequestQueue rQueue = Volley.newRequestQueue(Krishitotho.this);
+        RequestQueue rQueue = Volley.newRequestQueue(Chasabad.this);
         rQueue.add(request);
 
         postList.setOnItemClickListener(new AdapterView.OnItemClickListener() {

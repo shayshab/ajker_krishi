@@ -20,26 +20,14 @@ import com.google.gson.Gson;
 import java.util.List;
 import java.util.Map;
 
-public class Krishitotho extends AppCompatActivity {
-
-    /* String[] itemname ={
-             "Khan",
-             "Mohammad",
-             "Shayshab",
-             "Azad",
-             "kanan",
-             "john",
-             "cool",
-             "pool"
-     };*/
+public class ChadKrishi extends AppCompatActivity {
     Integer[] imgid = {
             R.drawable.fish,
 
 
     };
 
-
-    String url = "http://www.ajkerkrishi.com/wp-json/wp/v2/posts?per_page=25&categories=47&fields=id,title";
+    String url = "http://www.ajkerkrishi.com/wp-json/wp/v2/posts?per_page=10&categories=54&fields=id,title";
     List<Object> list;
     Gson gson;
     ProgressDialog progressDialog;
@@ -49,26 +37,18 @@ public class Krishitotho extends AppCompatActivity {
     int postID;
     String postTitle[];
 
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_krishitotho);
-        setTitle("কৃষি তথ্য");
+        setContentView(R.layout.activity_chad_krishi);
+        setTitle("ছাদ কৃষি");
 
-        // CustomListAdapter adapter=new CustomListAdapter(this, itemname, imgid);
 
-        final ListView postList = findViewById(R.id.list);
-        //postList.setAdapter(adapter);
-        progressDialog = new ProgressDialog(Krishitotho.this);
+        postList = findViewById(R.id.postList);
+        progressDialog = new ProgressDialog(ChadKrishi.this);
         progressDialog.setMessage("অপেক্ষা করুন লোড হচ্ছে...");
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.show();
-
 
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
@@ -83,20 +63,20 @@ public class Krishitotho extends AppCompatActivity {
                     postTitle[i] = (String) mapTitle.get("rendered");
                 }
 
-                CustomListAdapter adapter = new CustomListAdapter(Krishitotho.this, postTitle, imgid);
-                postList.setAdapter(adapter);
+                // postList.setAdapter(new ArrayAdapter(ChadKrishi.this,android.R.layout.simple_list_item_1,postTitle));
 
-                //postList.setAdapter(new ArrayAdapter(Krishitotho.this,android.R.layout.simple_list_item_1,postTitle));
+                CustomListAdapter adapter = new CustomListAdapter(ChadKrishi.this, postTitle, imgid);
+                postList.setAdapter(adapter);
                 progressDialog.dismiss();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
-                Toast.makeText(Krishitotho.this, "Some error occurred", Toast.LENGTH_LONG).show();
+                Toast.makeText(ChadKrishi.this, "Some error occurred", Toast.LENGTH_LONG).show();
             }
         });
 
-        RequestQueue rQueue = Volley.newRequestQueue(Krishitotho.this);
+        RequestQueue rQueue = Volley.newRequestQueue(ChadKrishi.this);
         rQueue.add(request);
 
         postList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -111,5 +91,6 @@ public class Krishitotho extends AppCompatActivity {
             }
         });
     }
-
 }
+
+

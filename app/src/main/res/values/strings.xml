@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AjkerKrishi Apps</string>
+    <string name="app_name">Ajker Krishi</string>
 
 
     <string name="btn_about">আজকের কৃষি</string>
@@ -21,5 +21,7 @@
     <string name="btn_uddokta">কৃষি উদ্যোক্তা</string>
     <string name="btn_krishiponno">কৃষি পণ্য কিনুন</string>
     <string name="loading">loading</string>
+    <string name="video">ভিডিও চিত্র</string>
+
 
 </resources>

@@ -28,7 +28,7 @@ public class PraniSompod extends AppCompatActivity {
 
     };
 
-    String url = "http://www.ajkerkrishi.com/wp-json/wp/v2/posts?per_page=10&categories=6&fields=id,title";
+    String url = "http://www.ajkerkrishi.com/wp-json/wp/v2/posts?per_page=20&categories=6&fields=id,title";
     List<Object> list;
     Gson gson;
     ProgressDialog progressDialog;

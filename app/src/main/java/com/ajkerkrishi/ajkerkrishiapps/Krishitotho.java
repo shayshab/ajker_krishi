@@ -39,7 +39,7 @@ public class Krishitotho extends AppCompatActivity {
     };
 
 
-    String url = "http://www.ajkerkrishi.com/wp-json/wp/v2/posts?per_page=25&categories=47&fields=id,title";
+    String url = "http://www.ajkerkrishi.com/wp-json/wp/v2/posts?per_page=15&categories=47&fields=id,title";
     List<Object> list;
     Gson gson;
     ProgressDialog progressDialog;

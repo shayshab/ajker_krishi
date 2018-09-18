@@ -15,6 +15,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.gson.Gson;
 
 import java.util.Map;
@@ -24,6 +26,7 @@ public class Post extends AppCompatActivity {
     TextView title;
     WebView content;
     ImageView img;
+    AdView mAdView;
 
     ProgressDialog progressDialog;
     Gson gson;
@@ -76,5 +79,9 @@ public class Post extends AppCompatActivity {
 
         RequestQueue rQueue = Volley.newRequestQueue(Post.this);
         rQueue.add(request);
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 }

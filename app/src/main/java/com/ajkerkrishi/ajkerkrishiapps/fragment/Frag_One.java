@@ -26,6 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Frag_One extends Fragment {
+
     public ProgressDialog progressDialog;
     String url = "http://www.ajkerkrishi.com/wp-json/wp/v2/posts?per_page=15&categories=69&fields=id,title";
     List<Object> list;

@@ -33,7 +33,7 @@ public class KrishiPonno extends AppCompatActivity {
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 super.onPageStarted(view, url, favicon);
                 prg.setVisibility(View.VISIBLE);
-                setTitle("Krishi Store");
+                setTitle("কৃষি পণ্য কিনুন");
             }
 
             @Override

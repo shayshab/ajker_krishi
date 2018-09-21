@@ -11,7 +11,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
-public class Poramorsho extends AppCompatActivity {
+public class Member extends AppCompatActivity {
 
     WebView webView;
     ProgressBar prg;
@@ -19,8 +19,8 @@ public class Poramorsho extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_poramorsho);
-        setTitle("পরামর্শ নিন");
+        setContentView(R.layout.activity_member);
+        setTitle("সদস্য হউন");
 
 
         getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
@@ -35,7 +35,7 @@ public class Poramorsho extends AppCompatActivity {
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 super.onPageStarted(view, url, favicon);
                 prg.setVisibility(View.VISIBLE);
-                setTitle("পরামর্শ নিন");
+                setTitle("সদস্য হউন");
             }
 
             @Override
@@ -45,7 +45,7 @@ public class Poramorsho extends AppCompatActivity {
 
             }
         });
-        webView.loadUrl("https://docs.google.com/forms/d/e/1FAIpQLSeczcfPUiMNnjUfPPMowL5Azw2Xkt_-1zoyyPz7lR8PelMJIg/viewform");
+        webView.loadUrl("https://docs.google.com/forms/d/e/1FAIpQLSfy8vG6reys-j0nXB2SbGOcuNWQiLcDRlc_Qy-h7bQUcOgpHg/viewform");
 
 
         webView.setOnKeyListener(new View.OnKeyListener() {
@@ -71,5 +71,4 @@ public class Poramorsho extends AppCompatActivity {
 
 
 }
-
 

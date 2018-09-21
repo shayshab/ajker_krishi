@@ -37,6 +37,7 @@ public class Frag_One extends Fragment {
     int postID;
     String postTitle[];
 
+
     Integer[] imgid = {
             R.drawable.fish,
 
@@ -93,7 +94,7 @@ public class Frag_One extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
-                Toast.makeText(getActivity().getApplicationContext(), "Some error occurred", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity().getApplicationContext(), "Connect your Internet and Restart this apps", Toast.LENGTH_LONG).show();
             }
         });
 

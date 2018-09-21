@@ -15,6 +15,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.gson.Gson;
 
 import java.util.List;
@@ -48,6 +50,7 @@ public class Krishitotho extends AppCompatActivity {
     Map<String, Object> mapTitle;
     int postID;
     String postTitle[];
+    AdView mAdView;
 
 
 
@@ -92,7 +95,7 @@ public class Krishitotho extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
-                Toast.makeText(Krishitotho.this, "Some error occurred", Toast.LENGTH_LONG).show();
+                Toast.makeText(Krishitotho.this, "Connect your Internet and Restart this apps", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -110,6 +113,10 @@ public class Krishitotho extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
 }

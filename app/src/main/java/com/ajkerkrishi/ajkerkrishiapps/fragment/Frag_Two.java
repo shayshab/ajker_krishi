@@ -1,7 +1,5 @@
 package com.ajkerkrishi.ajkerkrishiapps.fragment;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,6 +15,7 @@ import com.ajkerkrishi.ajkerkrishiapps.Contact;
 import com.ajkerkrishi.ajkerkrishiapps.KrishiOdekta;
 import com.ajkerkrishi.ajkerkrishiapps.KrishiPonno;
 import com.ajkerkrishi.ajkerkrishiapps.Krishitotho;
+import com.ajkerkrishi.ajkerkrishiapps.Member;
 import com.ajkerkrishi.ajkerkrishiapps.MotsoSompod;
 import com.ajkerkrishi.ajkerkrishiapps.PokaMakor;
 import com.ajkerkrishi.ajkerkrishiapps.Poramorsho;
@@ -132,35 +131,38 @@ public class Frag_Two extends Fragment {
         btn8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), Poramorsho.class);
+                Intent intent = new Intent(getActivity(), Member.class);
                 startActivity(intent);
             }
         });
         btn9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity(), R.style.AlertDialogStyle);
-                builder1.setMessage("you have to member first");
-                builder1.setCancelable(true);
 
-                builder1.setPositiveButton("Yes",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                Intent intent = new Intent(getActivity(), Poramorsho.class);
-                                startActivity(intent);
-                            }
-                        });
+                Intent intent = new Intent(getActivity(), Poramorsho.class);
+                startActivity(intent);
+                //AlertDialog.Builder builder1 = new AlertDialog.Builder(getActivity(), R.style.AlertDialogStyle);
+                //builder1.setMessage("you have to member first");
+                //builder1.setCancelable(true);
 
-                builder1.setNegativeButton(
-                        "No",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
+                //builder1.setPositiveButton("Yes",
+                //new DialogInterface.OnClickListener() {
+                //public void onClick(DialogInterface dialog, int id) {
+                //Intent intent = new Intent(getActivity(), Poramorsho.class);
+                // startActivity(intent);
+                // }
+                //});
 
-                AlertDialog alert11 = builder1.create();
-                alert11.show();
+                //builder1.setNegativeButton(
+                // "No",
+                //new DialogInterface.OnClickListener() {
+                //  public void onClick(DialogInterface dialog, int id) {
+                //    dialog.cancel();
+                //  }
+                //  });
+
+                //AlertDialog alert11 = builder1.create();
+                // alert11.show();
             }
         });
         btn10.setOnClickListener(new View.OnClickListener() {

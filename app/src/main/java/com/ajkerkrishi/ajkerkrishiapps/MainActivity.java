@@ -2,6 +2,7 @@ package com.ajkerkrishi.ajkerkrishiapps;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -49,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
                 TextOutsideCircleButton.Builder builder = new TextOutsideCircleButton.Builder()
                         .normalImageRes(imageIdList.get(i))
                         .normalText(titleList.get(i))
+                        .normalTextColor(Color.BLACK)
+                        .textSize(12)
+                        .pieceColor(Color.WHITE)
 
                         .listener(new OnBMClickListener() {
                             @Override
@@ -68,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
                 TextOutsideCircleButton.Builder builder = new TextOutsideCircleButton.Builder()
                         .normalImageRes(imageIdList.get(i))
                         .normalText(titleList.get(i))
+                        .normalTextColor(Color.BLACK)
+                        .textSize(12)
 
                         .listener(new OnBMClickListener() {
                             @Override
@@ -111,6 +117,8 @@ public class MainActivity extends AppCompatActivity {
                 TextOutsideCircleButton.Builder builder = new TextOutsideCircleButton.Builder()
                         .normalImageRes(imageIdList.get(i))
                         .normalText(titleList.get(i))
+                        .normalTextColor(Color.BLACK)
+                        .textSize(12)
 
                         .listener(new OnBMClickListener() {
                             @Override
@@ -175,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setInitialData() {
 
-        imageIdList.add(R.drawable.about);
+        imageIdList.add(R.drawable.iconajkerkrishilogo);
         imageIdList.add(R.drawable.de);
         imageIdList.add(R.drawable.ex);
 

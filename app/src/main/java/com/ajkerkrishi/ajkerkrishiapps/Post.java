@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,8 +16,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.gson.Gson;
 
 import java.util.Map;
@@ -26,7 +29,9 @@ public class Post extends AppCompatActivity {
     TextView title;
     WebView content;
     ImageView img;
+    private InterstitialAd interstitial;
     AdView mAdView;
+
 
     ProgressDialog progressDialog;
     Gson gson;
@@ -39,6 +44,31 @@ public class Post extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
+
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
+        //AdRequest adRequest = new AdRequest.Builder().build();
+
+        // Prepare the Interstitial Ad
+        interstitial = new InterstitialAd(Post.this);
+// Insert the Ad Unit ID
+        interstitial.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
+
+        interstitial.loadAd(adRequest);
+// Prepare an Interstitial Ad Listener
+        interstitial.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+// Call displayInterstitial() function
+                displayInterstitial();
+            }
+        });
+
+
+
 
         final String id = getIntent().getExtras().getString("id");
 
@@ -63,9 +93,10 @@ public class Post extends AppCompatActivity {
                 mapContent = (Map<String, Object>) mapPost.get("content");
 
                 title.setText(mapTitle.get("rendered").toString());
-
                 img.setImageURI(Uri.parse(mapImage.get("source_url").toString()));
                 content.loadData(mapContent.get("rendered").toString(), "text/html", "UTF-8");
+                WebSettings webSettings = content.getSettings();
+                webSettings.setJavaScriptEnabled(true);
 
                 progressDialog.dismiss();
             }
@@ -80,8 +111,13 @@ public class Post extends AppCompatActivity {
         RequestQueue rQueue = Volley.newRequestQueue(Post.this);
         rQueue.add(request);
 
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+
+    }
+
+    public void displayInterstitial() {
+// If Ads are loaded, show Interstitial else show nothing.
+        if (interstitial.isLoaded()) {
+            interstitial.show();
+        }
     }
 }

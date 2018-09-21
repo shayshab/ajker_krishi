@@ -5,10 +5,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
     <application
         android:allowBackup="true"
-        android:icon="@drawable/iconajkerkrishilogo"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -35,22 +34,20 @@
         <activity android:name=".PraniSompod" />
         <activity android:name=".MotsoSompod" />
         <activity android:name=".PokaMakor" />
-        <activity android:name=".KrishiOdekta"></activity>
+        <activity android:name=".KrishiOdekta" />
 
         <service android:name=".Firebase.MyFirebaseInstanceIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-
         <service android:name=".Firebase.MyFirebaseMessagingIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-
+        <activity android:name=".Member"></activity>
     </application>
-
 
 </manifest>

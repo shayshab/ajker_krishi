@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">আজকের কৃষি-Ajker Krishi</string>
+    <string name="app_name">ই-কৃষি সেবা</string>
 
 
     <string name="btn_about">আজকের কৃষি</string>
@@ -23,8 +23,8 @@
     <string name="loading">loading</string>
     <string name="video">ভিডিও চিত্র</string>
 
-    <string name="banner_ad_unit_id">ca-app-pub-8873630802345443/2955865167</string>
-    <string name="interstitial_ad_unit_id">ca-app-pub-8873630802345443/6244373483</string>
+    <string name="banner_ad_unit_id">ca-app-pub-2357988955955365/9277930626</string>
+    <string name="interstitial_ad_unit_id">ca-app-pub-2357988955955365/7758008977</string>
 
 
 </resources>

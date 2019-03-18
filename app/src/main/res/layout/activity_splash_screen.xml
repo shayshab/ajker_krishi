@@ -11,7 +11,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/iconloadingajkerkrishi" />
+        android:src="@drawable/ekrishi" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/logo_id"
         android:layout_centerHorizontal="true"
-        android:text="আজকের কৃষি"
+        android:text="ই-কৃষি সেবা"
         android:textColor="#73bd1f"
         android:textSize="30dp"
         android:textStyle="bold" />
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tx"
         android:layout_centerHorizontal="true"
-        android:text="প্রজন্মের ই-কৃষি সেবা"
+        android:text="ই-কৃষি প্রযুক্তি এবং চাষাবাদ পদ্ধতি"
         android:textColor="#ff9a02"
         android:textSize="25dp" />
 

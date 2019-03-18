@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ajkerkrishi.ajkerkrishiapps">
+    package="com.decoderssquad.ekrishisheba">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+
     <application
         android:allowBackup="true"
-        android:icon="@drawable/icon"
+        android:icon="@drawable/ekrishi"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen">
+        <activity android:name="com.decoderssquad.ekrishisheba.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,34 +21,35 @@
             </intent-filter>
         </activity>
         <activity android:name=".FragmentOne" />
-        <activity android:name=".AjkerKrishi" />
-        <activity android:name=".Contact" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Krishitotho" />
-        <activity android:name=".Poramorsho" />
-        <activity android:name=".Post" />
+        <activity android:name="com.decoderssquad.ekrishisheba.AjkerKrishi" />
+        <activity android:name="com.decoderssquad.ekrishisheba.Contact" />
+        <activity android:name="com.decoderssquad.ekrishisheba.MainActivity" />
+        <activity android:name="com.decoderssquad.ekrishisheba.Krishitotho" />
+        <activity android:name="com.decoderssquad.ekrishisheba.Poramorsho" />
+        <activity android:name="com.decoderssquad.ekrishisheba.Post" />
         <activity android:name=".My_List" />
-        <activity android:name=".Video" />
-        <activity android:name=".KrishiPonno" />
-        <activity android:name=".Chasabad" />
-        <activity android:name=".ChadKrishi" />
-        <activity android:name=".PraniSompod" />
-        <activity android:name=".MotsoSompod" />
-        <activity android:name=".PokaMakor" />
-        <activity android:name=".KrishiOdekta" />
+        <activity android:name="com.decoderssquad.ekrishisheba.Video" />
+        <activity android:name="com.decoderssquad.ekrishisheba.KrishiPonno" />
+        <activity android:name="com.decoderssquad.ekrishisheba.Chasabad" />
+        <activity android:name="com.decoderssquad.ekrishisheba.ChadKrishi" />
+        <activity android:name="com.decoderssquad.ekrishisheba.PraniSompod" />
+        <activity android:name="com.decoderssquad.ekrishisheba.MotsoSompod" />
+        <activity android:name="com.decoderssquad.ekrishisheba.PokaMakor" />
+        <activity android:name="com.decoderssquad.ekrishisheba.KrishiOdekta" />
 
-        <service android:name=".Firebase.MyFirebaseInstanceIdService">
+        <service android:name="com.decoderssquad.ekrishisheba.Firebase.MyFirebaseInstanceIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-        <service android:name=".Firebase.MyFirebaseMessagingIdService">
+        <service android:name="com.decoderssquad.ekrishisheba.Firebase.MyFirebaseMessagingIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <activity android:name=".Member"></activity>
+        <activity android:name="com.decoderssquad.ekrishisheba.Member"></activity>
     </application>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
 </manifest>

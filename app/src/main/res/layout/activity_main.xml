@@ -33,9 +33,9 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         app:bmb_buttonEnum="textOutsideCircle"
-        app:bmb_buttonPlaceEnum="buttonPlace_sc_3_1"
+        app:bmb_buttonPlaceEnum="buttonPlace_sc_2_1"
         app:bmb_normalColor="@color/colorPrimary"
-        app:bmb_piecePlaceEnum="piecePlace_dot_3_1" />
+        app:bmb_piecePlaceEnum="piecePlace_dot_2_1" />
 
 
 </RelativeLayout>
